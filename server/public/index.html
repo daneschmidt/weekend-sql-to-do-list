@@ -4,13 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Danes Task Manager</title>
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="/scripts/client.js"></script>
-    <title>Danes Task Manager</title>
 </head>
 <body>
-    
-    <h1>TASK LIST</h1>
+    <header>
+        <h1>TASK LIST</h1>
+    </header>   
+
+    <form id="new-task">
+        <input type="text" name="new-task" id="js-new-task-input" placeholder="Enter New Task">
+        <button id="js-submit-btn">Submit New Task</button>
+    </form>
+
+    <div class="container"></div>
+    <button id="js-complete-btn">Complete</button>
+    <button id="js-delete-btn">Delete</button>
+
+    </section>
+
+   
 
 
 </body>
