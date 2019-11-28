@@ -32,14 +32,17 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
 
 
+//API
 app.get('/api/tasks', (req,res) => {
     pool.query(`SELECT * FROM "tasklist"`)
     .then((response) => {
-        console.log(response);
-        res.send(200);
-
+        console.log(response.rows);
+        res.sendStatus(200);
     })
-
+    .catch((err) => {
+        console.log(err);
+        res.sendStatus(500);
+    })
 })
 // //ROUTES
 // app.use('/api/tasks', taskRouter);
