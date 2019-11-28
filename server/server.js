@@ -31,11 +31,20 @@ app.use(express.static('server/public'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
 
+
+app.get('/api/tasks', (req,res) => {
+    pool.query(`SELECT * FROM "tasklist"`)
+    .then((response) => {
+        console.log(response);
+        res.send(200);
+
+    })
+
+})
 // //ROUTES
 // app.use('/api/tasks', taskRouter);
 
 
 app.listen(PORT, () => {
-    console.log(pool.query(`SELECT * FROM "tasklist"`));
     console.log(`Server is up on port: ${PORT}`);
 })
