@@ -2,9 +2,6 @@ const express = require('express');
 const router = express.Router();
 
 
-
-const taskArray = [];
-
 router.get('/', (req, res) => {
     res.send(200);
 
