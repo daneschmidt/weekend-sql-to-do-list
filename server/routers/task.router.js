@@ -6,12 +6,11 @@ const router = express.Router();
 const taskArray = [];
 
 router.get('/', (req, res) => {
-    res.send(taskArray);
+    res.send(200);
 
 });
 
 router.post('/', (req,res) => {
-    taskArray.push(req.body.task);
     res.sendStatus(201);
 
 })

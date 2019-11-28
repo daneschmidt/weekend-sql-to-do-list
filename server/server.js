@@ -14,8 +14,6 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use('/api/tasks', taskRouter);
 
 
-
-
 app.listen(PORT, () => {
     console.log(`Server is up on port: ${PORT}`);
 })
