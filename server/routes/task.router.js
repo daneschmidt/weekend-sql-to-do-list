@@ -13,7 +13,6 @@ router.get('/', (req,res) => {
     });
 });
 
-
 router.post('/', (req,res) => {
     const newTask = req.body.task;
     console.log(newTask);
@@ -30,6 +29,5 @@ router.post('/', (req,res) => {
             res.sendStatus(500);
         });
 });
-
 
 module.exports = router;

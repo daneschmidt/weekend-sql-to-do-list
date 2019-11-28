@@ -14,7 +14,7 @@ pool.on('connect', () => {
 });
 
 pool.on('error', (error) => {
-    console.log(`OH SHIT pool is broken' ${error}`);np
+    console.log(`OH SHIT pool is broken' ${error}`);
 
 });
 
