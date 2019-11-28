@@ -10,12 +10,10 @@ const pool = new Pool({
 
 pool.on('connect', () => {
     console.log('database is good boss');
-
 });
 
 pool.on('error', (error) => {
     console.log(`OH SHIT pool is broken' ${error}`);
-
 });
 
 module.exports = pool;

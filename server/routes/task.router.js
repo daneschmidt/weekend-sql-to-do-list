@@ -5,6 +5,7 @@ const pool = require('../modules/pool');
 router.get('/', (req,res) => {
     pool.query(`SELECT * FROM "tasklist"`)
     .then((response) => {
+        res.send(response.rows);
         res.sendStatus(200);
     })
     .catch((err) => {
