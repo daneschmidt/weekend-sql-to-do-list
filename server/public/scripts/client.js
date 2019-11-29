@@ -5,15 +5,20 @@ console.log('js ready');
 function init() {
     getTasks();
 
-    $('#new-task').on('submit', postTask);
+    $('#new-task').on('submit', getValuesFromForm);
 }
 
-function postTask() {
+function getValuesFromForm(event) {
+    event.preventDefault();
     const newTask = {
-        task: $('js-new-task-input')
-
+        task: $('#js-new-task-input').val(),
+        complete: $('#js-new-complete-input').val(),
+        delete: $('#js-new-delete-input').val(),
     }
+    postTask(newTask);
+}
 
+function postTask(newTask) {
     $.ajax({
         method: "POST",
         url: "/api/tasks",
@@ -25,7 +30,6 @@ function postTask() {
     .catch((err) => {
         console.warn(err);
     })
-
 }
 
 function getTasks() {
@@ -40,7 +44,6 @@ function getTasks() {
         console.warn(err);     
     })
 }
-
 
 
 function render(tasks) {
