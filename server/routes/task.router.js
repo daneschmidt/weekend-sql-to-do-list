@@ -31,10 +31,20 @@ router.post('/', (req,res) => {
         });
 });
 
-// router.delete('/', (req, res) => {
+router.delete('/:id', (req, res) => {
+    console.log(req.params.id);
 
+    const queryString = `DELETE FROM "tasklist" WHERE "id" = ${req.params.id};`;
 
-// });
+    pool.query(queryString)
+        .then((response) => {
+            res.sendStatus(200);
+        })
+        .catch((err) => {
+            res.sendStatus(500);
+        })
+    
+});
 
 // router.put('/' (req,res) => {
 

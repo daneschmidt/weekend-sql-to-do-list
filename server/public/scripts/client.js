@@ -6,8 +6,7 @@ function init() {
     getTasks();
 
     $('#new-task').on('submit', getValuesFromForm);
-
-    $('.container').on('click', '.js-btn-delete', deleteSong);
+    $('.container').on('click', '.js-btn-delete', deleteTask);
 }
 
 function getValuesFromForm(event) {
@@ -47,11 +46,21 @@ function getTasks() {
     })
 }
 
-function deleteSong () {
-    console.log($(this).data('id'));
+function deleteTask() {
+    const idNumber = $(this).data('id');
+
+    $.ajax({
+        method: "DELETE",
+        url: '/api/tasks/' + idNumber
+    })
+    .then((response) => {
+        getTasks();
+    })
+    .catch((response) => {
+        console.warn(response);
+    })
 
 }
-
 
 function render(tasks) {
     $('.container').empty();
