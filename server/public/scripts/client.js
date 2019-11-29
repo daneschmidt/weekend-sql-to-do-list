@@ -6,6 +6,8 @@ function init() {
     getTasks();
 
     $('#new-task').on('submit', getValuesFromForm);
+
+    $('.container').on('click', '.js-btn-delete', deleteSong);
 }
 
 function getValuesFromForm(event) {
@@ -45,13 +47,18 @@ function getTasks() {
     })
 }
 
+function deleteSong () {
+    console.log($(this).data('id'));
+
+}
+
 
 function render(tasks) {
     $('.container').empty();
     for(let task of tasks) {
         $('.container').append(`
             <div>
-                <p>${task.task} - ${task.complete} - ${task.delete}</p>
+                <p>${task.task} - ${task.complete} - ${task.delete}<span><button class="js-btn-delete" data-id="${task.id}">DELETE</button></p>
             </div>
         `)
     }

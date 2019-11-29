@@ -15,20 +15,31 @@ router.get('/', (req,res) => {
 
 router.post('/', (req,res) => {
     const newTask = req.body;
-    console.log(newTask);
+    // console.log(newTask);
     
     const queryString = `INSERT INTO "tasklist" (task, complete, delete) VALUES 
     ('${newTask.task}', '${newTask.complete}', '${newTask.delete}');`;
 
     pool.query(queryString)
         .then((response) => {
-            console.log(response);
+            // console.log(response);
             res.sendStatus(201);
         })
         .catch((err) => {
-            console.log(err);
+            // console.log(err);
             res.sendStatus(500);
         });
 });
+
+// router.delete('/', (req, res) => {
+
+
+// });
+
+// router.put('/' (req,res) => {
+
+
+// });
+
 
 module.exports = router;
