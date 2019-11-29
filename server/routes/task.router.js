@@ -43,7 +43,7 @@ router.delete('/:id', (req, res) => {
         .catch((err) => {
             res.sendStatus(500);
         })
-    
+
 });
 
 // router.put('/' (req,res) => {
