@@ -5,10 +5,12 @@ console.log('js ready');
 function init() {
     getTasks();
     
-    $('#new-task').on('submit', getValuesFromForm,);
+    $('#new-task').on('submit', getValuesFromForm);
     $('.container').on('click', '.js-btn-delete', deleteTask);
     $('.container').on('click', '.js-btn-complete', completeTask);
+
 }
+
 
 function getValuesFromForm(event) {
     event.preventDefault();
@@ -66,10 +68,10 @@ function deleteTask() {
 
 function completeTask() {
     updateTask('yes', $(this).data('id'));
-    console.log('you clicked the complete button', $(this).data('id'));
 }
 
 function updateTask(completedStatus, id) {
+    turnGreen();
     $.ajax({
         method: 'PUT',
         url: '/api/tasks/' + id,
@@ -89,6 +91,15 @@ function clearInputs() {
     $('#js-new-task-input').val('');
 }
 
+
+
+function turnGreen(event) {
+    console.log('we should be turning green here');
+    $(".toggleMeGreen").toggleClass("completeButton1");
+}
+
+
+
 function render(tasks) {
     $('.container').empty();
     for(let task of tasks) {
@@ -97,7 +108,7 @@ function render(tasks) {
             <div>
                 <td>${task.task}</td>
                 <td>${task.complete}<td>
-                 <td><button class="js-btn-complete completeButton" data-id="${task.id}">COMPLETE</button></td>
+                 <td><button class="js-btn-complete completeButton toggleMeGreen" data-id="${task.id}">COMPLETE</button></td>
                  <td><button class="js-btn-delete deleteButton" data-id="${task.id}">DELETE</button><span></td>
             </div>
             </tr>
