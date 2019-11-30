@@ -66,9 +66,14 @@ function render(tasks) {
     $('.container').empty();
     for(let task of tasks) {
         $('.container').append(`
+            <tr>
             <div>
-                <p>${task.task} - <span><button class="js-btn-complete completeButton" data-id="${task.id}">COMPLETE</button><button class="js-btn-delete deleteButton" data-id="${task.id}">DELETE</button><span></p>
+                <td>${task.task}</td>
+                <td>${task.complete}<td>
+                 <td><button class="js-btn-complete completeButton" data-id="${task.id}">COMPLETE</button></td>
+                 <td><button class="js-btn-delete deleteButton" data-id="${task.id}">DELETE</button><span></td>
             </div>
+            </tr>
         `)
     }
 }
