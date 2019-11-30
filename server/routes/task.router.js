@@ -3,7 +3,7 @@ const router = express.Router();
 const pool = require('../modules/pool');
 
 router.get('/', (req,res) => {
-    pool.query(`SELECT * FROM "tasklist"`)
+    pool.query(`SELECT * FROM "tasklist" ORDER BY "id" DESC`)
     .then((response) => {
         res.send(response.rows);
     })
