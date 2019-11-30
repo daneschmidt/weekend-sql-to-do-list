@@ -7,6 +7,7 @@ function init() {
 
     $('#new-task').on('submit', getValuesFromForm);
     $('.container').on('click', '.js-btn-delete', deleteTask);
+    $('.container').on('click', '.js-btn-complete', completeTask);
 }
 
 function getValuesFromForm(event) {
@@ -60,6 +61,27 @@ function deleteTask() {
         console.warn(response);
     })
 
+}
+
+function completeTask() {
+    updateTask('yes', $(this).data('id'));
+    console.log('you clicked the complete button', $(this).data('id'));
+}
+
+function updateTask(completedStatus, id) {
+    $.ajax({
+        method: 'PUT',
+        url: '/api/tasks/' + id,
+        data: {
+            complete: completedStatus
+        }
+    })
+        .then((response) => {
+            getTasks();
+        })
+        .catch((err) => {
+            console.warn(err);
+        })
 }
 
 function render(tasks) {

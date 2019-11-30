@@ -47,10 +47,23 @@ router.delete('/:id', (req, res) => {
 });
 
 router.put('/:id', (req,res) => {
-    const id = req.params.id;
     const complete = req.body.complete;
-    console.log(id, complete);
-    res.send(200);
+    console.log(req.params.id, complete);
+   
+
+
+    // let queryString = `UPDATE "tasklist" SET "complete"='yes' WHERE "id" = 56;`;
+    //     //UPDATE "tasklist" SET ${complete}="complete WHERE "id" = ${req.params.id};
+
+    pool.query(`UPDATE "tasklist" SET "complete"='yes' WHERE "id" = ${req.params.id};`)  //queryString, [req.params.id]
+    .then((response) => {
+        res.sendStatus(201);
+    })
+    .catch((err) => {
+        console.log(err);
+        res.sendStatus(500);
+    })
+
 });
 
 module.exports = router;
