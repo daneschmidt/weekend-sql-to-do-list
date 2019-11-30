@@ -4,8 +4,8 @@ console.log('js ready');
 
 function init() {
     getTasks();
-
-    $('#new-task').on('submit', getValuesFromForm);
+    
+    $('#new-task').on('submit', getValuesFromForm,);
     $('.container').on('click', '.js-btn-delete', deleteTask);
     $('.container').on('click', '.js-btn-complete', completeTask);
 }
@@ -14,7 +14,7 @@ function getValuesFromForm(event) {
     event.preventDefault();
     const newTask = {
         task: $('#js-new-task-input').val(),
-        complete: $('#js-new-complete-input').val(),
+        complete: "no",
         delete: $('#js-new-delete-input').val(),
     }
     postTask(newTask);
@@ -28,6 +28,7 @@ function postTask(newTask) {
     })
     .then((response) => {
         getTasks();
+        clearInputs();
     })
     .catch((err) => {
         console.warn(err);
@@ -82,6 +83,10 @@ function updateTask(completedStatus, id) {
         .catch((err) => {
             console.warn(err);
         })
+}
+
+function clearInputs() {
+    $('#js-new-task-input').val('');
 }
 
 function render(tasks) {
