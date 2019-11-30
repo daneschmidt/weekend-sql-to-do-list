@@ -46,9 +46,11 @@ router.delete('/:id', (req, res) => {
 
 });
 
-// router.put('/:id' (req,res) => {
-
-
-// });
+router.put('/:id', (req,res) => {
+    const id = req.params.id;
+    const complete = req.body.complete;
+    console.log(id, complete);
+    res.send(200);
+});
 
 module.exports = router;
