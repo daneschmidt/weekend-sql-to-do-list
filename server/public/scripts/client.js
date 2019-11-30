@@ -11,7 +11,6 @@ function init() {
 
 }
 
-
 function getValuesFromForm(event) {
     event.preventDefault();
     const newTask = {
@@ -68,10 +67,10 @@ function deleteTask() {
 
 function completeTask() {
     updateTask('yes', $(this).data('id'));
+    turnGreen();
 }
 
 function updateTask(completedStatus, id) {
-    turnGreen();
     $.ajax({
         method: 'PUT',
         url: '/api/tasks/' + id,
@@ -91,14 +90,10 @@ function clearInputs() {
     $('#js-new-task-input').val('');
 }
 
-
-
 function turnGreen(event) {
     console.log('we should be turning green here');
-    $(".toggleMeGreen").toggleClass("completeButton1");
+    $("#toggleMeGreen").toggleClass("completeButton2");
 }
-
-
 
 function render(tasks) {
     $('.container').empty();
@@ -108,8 +103,8 @@ function render(tasks) {
             <div>
                 <td>${task.task}</td>
                 <td>${task.complete}<td>
-                 <td><button class="js-btn-complete completeButton toggleMeGreen" data-id="${task.id}">COMPLETE</button></td>
-                 <td><button class="js-btn-delete deleteButton" data-id="${task.id}">DELETE</button><span></td>
+                <td><button class="js-btn-complete completeButton" id="toggleMeGreen" data-id="${task.id}">COMPLETE</button></td>
+                <td><button class="js-btn-delete deleteButton" data-id="${task.id}">DELETE</button><span></td>
             </div>
             </tr>
         `)
