@@ -120,11 +120,13 @@ function render(tasks) {
         $('.js-task-list').append(`
 
         <tr>
+        <span>
         <td align="center"><h3>${task.task}</h3></td>
         <td align="center"><h3>${task.complete}<h3><td>
-        <td align="center"><button class="js-btn-complete completeButtonBlue" data-id="${task.id}">COMPLETE</button></td>
+        <td align="center"><button class="js-btn-complete completeButtonBlue " data-id="${task.id}">COMPLETE</button></td>
         <td align="center"><button class="js-btn-delete deleteButton" data-id="${task.id}">DELETE</button><span></td>
         </tr>
+        </span>
             
         `)
 
