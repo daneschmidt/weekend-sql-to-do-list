@@ -9,24 +9,33 @@
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="/scripts/client.js"></script>
+    
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Oxygen&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Oxygen:700&display=swap" rel="stylesheet">
+
 </head>
 <body>
     <header>
-        <h1>TASK TRACKER</h1>
+        <h1 align="center">Task Tracker</h1>
     </header>   
 
-    <table>
+    <table align="center">
         <thead>
-            <th>Task</th>
-            <th>Complete?</th>
+            <tr>
+            <th><h2>Task</h2></th>
+            <th><h2>Complete?</h2></th>
+            </tr>
         </thead>
-            <tbody class="container">
+
+            <tbody class="js-task-list">
             </tbody>
+
     </table>
 
-    <form id="new-task" class="top-space">
-        <input type="text" name="new-task" id="js-new-task-input" placeholder="Enter New Task">
-        <button id="js-submit-btn">Submit New Task</button>
+    <form id="new-task" class="top-space" align="center">
+        <input type="text" name="new-task" size="55" id="js-new-task-input" placeholder="Enter New Task">
+        <button id="js-submit-btn" class="submitButton">Submit Task</button>
     </form>
 
 </body>

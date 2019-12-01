@@ -1,8 +1,33 @@
 
 body {
     background-color: lightgrey;
+}
+
+h1 {
+	font-family: 'Raleway', sans-serif;
+}
+
+h2 {
+	font-family: 'Oxygen', sans-serif;
+	
+}
+
+h3 {
+	font-family: 'Oxygen', sans-serif;
+	font-size: 14px;
+}
+
+table {
+
+	
+  }
+
+th, td {
+	
 
 }
+
+
 
 .green{ 
     background: green;
@@ -23,6 +48,20 @@ body {
 }
 
 .completeButton2 {
+	background-color:#bee60e;
+	border-radius:15px;
+	border:1px solid #c8ee21;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:12px;
+	padding:4px 4px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #7db106;
+}
+
+.submitButton {
 	background-color:#291dca;
 	border-radius:15px;
 	border:1px solid #103cb8;
@@ -37,7 +76,7 @@ body {
 }
 
 .completeButton:hover {
-	background-color:#5cbf2a;
+	background-color:#3f831d;
 }
 .completeButton:active {
 	position:relative;

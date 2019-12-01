@@ -6,8 +6,8 @@ function init() {
     getTasks();
     
     $('#new-task').on('submit', getValuesFromForm);
-    $('.container').on('click', '.js-btn-delete', deleteTask);
-    $('.container').on('click', '.js-btn-complete', completeTask);
+    $('.js-task-list').on('click', '.js-btn-delete', deleteTask);
+    $('.js-task-list').on('click', '.js-btn-complete', completeTask);
 
 }
 
@@ -67,7 +67,7 @@ function deleteTask() {
 
 function completeTask() {
     updateTask('yes', $(this).data('id'));
-    turnGreen();
+    turnGreen($(this).data('id'));
 }
 
 function updateTask(completedStatus, id) {
@@ -92,21 +92,43 @@ function clearInputs() {
 
 function turnGreen(event) {
     console.log('we should be turning green here');
+    console.log(event);
     $("#toggleMeGreen").toggleClass("completeButton2");
 }
 
 function render(tasks) {
-    $('.container').empty();
+    $('.js-task-list').empty();
+
+
+    const tableOfTasks = tasks;
+
+
     for(let task of tasks) {
-        $('.container').append(`
+        if(task.complete == 'yes') {
+        $('.js-task-list').append(`
+
             <tr>
-            <div>
-                <td>${task.task}</td>
-                <td>${task.complete}<td>
-                <td><button class="js-btn-complete completeButton" id="toggleMeGreen" data-id="${task.id}">COMPLETE</button></td>
-                <td><button class="js-btn-delete deleteButton" data-id="${task.id}">DELETE</button><span></td>
-            </div>
+                <td align="center"><h3>${task.task}</h3></td>
+                <td align="center"><h3>${task.complete}<h3><td>
+                <td align="center"><button class="js-btn-complete completeButton" data-id="${task.id}">COMPLETE</button></td>
+                <td align="center"><button class="js-btn-delete deleteButton" data-id="${task.id}">DELETE</button><span></td>
             </tr>
+            
         `)
+    }
+        else {
+        $('.js-task-list').append(`
+
+        <tr>
+        <td align="center"><h3>${task.task}</h3></td>
+        <td align="center"><h3>${task.complete}<h3><td>
+        <td align="center"><button class="js-btn-complete submitButton" data-id="${task.id}">COMPLETE</button></td>
+        <td align="center"><button class="js-btn-delete deleteButton" data-id="${task.id}">DELETE</button><span></td>
+        </tr>
+            
+        `)
+
+        }
+
     }
 }
