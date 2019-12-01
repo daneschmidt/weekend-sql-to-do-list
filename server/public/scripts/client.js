@@ -110,7 +110,7 @@ function render(tasks) {
         <tr>
             <td align="center"><h3>${task.task}</h3></td>
             <td align="center"><h3>${task.complete}<h3><td>
-             <td align="center"><button class="js-btn-complete completeButton" data-id="${task.id}">COMPLETE</button></td>
+             <td align="center"><button class="js-btn-complete completeButtonGreen" data-id="${task.id}">COMPLETE</button></td>
             <td align="center"><button class="js-btn-delete deleteButton" data-id="${task.id}">DELETE</button><span></td>
         </tr>
             
@@ -122,7 +122,7 @@ function render(tasks) {
         <tr>
         <td align="center"><h3>${task.task}</h3></td>
         <td align="center"><h3>${task.complete}<h3><td>
-        <td align="center"><button class="js-btn-complete submitButton" data-id="${task.id}">COMPLETE</button></td>
+        <td align="center"><button class="js-btn-complete completeButtonBlue" data-id="${task.id}">COMPLETE</button></td>
         <td align="center"><button class="js-btn-delete deleteButton" data-id="${task.id}">DELETE</button><span></td>
         </tr>
             
