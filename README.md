@@ -1,7 +1,7 @@
 # Task Tracker 1.0
 
 ## Screen Shots
-![](server/public/images/tasktracker.png)
+![](server/public/tasktracker.png)
 
 ## Description
 
@@ -14,4 +14,4 @@ HTML, CSS, Javascript, Node, Express, JQuery, Body-Parser, PostgreSQL and Postic
 
 # Support
 
-Please email me at <a href = "mailto: daneschmidt@gmail.com">Send Email</a> with any questions, comments or feature suggestions. 
+Please email me at <a href = "mailto: daneschmidt@gmail.com">daneschmidt@gmail.com</a> with any questions, comments or feature suggestions. 
