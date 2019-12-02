@@ -1,46 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css">
     <title>Danes Task Manager</title>
-    
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="/scripts/client.js"></script>
-    
+
     <link href="https://fonts.googleapis.com/css?family=Raleway:400,900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Oxygen&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Oxygen:700&display=swap" rel="stylesheet">
 
 </head>
+
 <body>
     <header>
         <h1>Task Tracker</h1>
-    </header>   
+    </header>
 
-    <table align="center">
+    <table>
         <thead>
             <tr>
-            <th><h2>Task</h2></th>
-            <th><h2>Status</h2></th>
-            
-        
+                <th>
+                    <h2>Task</h2>
+                </th>
+                <th>
+                    <h2>Status</h2>
+                </th>
             </tr>
         </thead>
 
-            <tbody class="js-task-list">
-            </tbody>
-
+        <tbody class="js-task-list">
+        </tbody>
     </table>
 
     <div class="form-div">
-    <form id="new-task">
-        <input type="text" name="new-task" size="55" id="js-new-task-input" placeholder="Enter New Task">
-        <button id="js-submit-btn" class="submitButton">Submit Task</button>
-    </form>
+        <form id="new-task">
+            <input type="text" name="new-task" size="55" id="js-new-task-input" placeholder="Enter New Task">
+            <button id="js-submit-btn" class="submitButton">Submit Task</button>
+        </form>
     </div>
 
 </body>
+
 </html>

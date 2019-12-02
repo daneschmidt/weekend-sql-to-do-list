@@ -4,7 +4,7 @@ console.log('js ready');
 
 function init() {
     getTasks();
-    
+
     $('#new-task').on('submit', getValuesFromForm);
     $('.js-task-list').on('click', '.js-btn-delete', deleteTask);
     $('.js-task-list').on('click', '.js-btn-complete', completeTask);
@@ -27,13 +27,13 @@ function postTask(newTask) {
         url: "/api/tasks",
         data: newTask
     })
-    .then((response) => {
-        getTasks();
-        clearInputs();
-    })
-    .catch((err) => {
-        console.warn(err);
-    })
+        .then((response) => {
+            getTasks();
+            clearInputs();
+        })
+        .catch((err) => {
+            console.warn(err);
+        })
 }
 
 function getTasks() {
@@ -41,12 +41,12 @@ function getTasks() {
         method: "GET",
         url: "/api/tasks",
     })
-    .then((response) => {
-        render(response);
-    })
-    .catch((err) => {
-        console.warn(err);     
-    })
+        .then((response) => {
+            render(response);
+        })
+        .catch((err) => {
+            console.warn(err);
+        })
 }
 
 function deleteTask() {
@@ -56,12 +56,12 @@ function deleteTask() {
         method: "DELETE",
         url: '/api/tasks/' + idNumber
     })
-    .then((response) => {
-        getTasks();
-    })
-    .catch((response) => {
-        console.warn(response);
-    })
+        .then((response) => {
+            getTasks();
+        })
+        .catch((response) => {
+            console.warn(response);
+        })
 
 }
 
@@ -99,13 +99,11 @@ function turnGreen(event) {
 function render(tasks) {
     $('.js-task-list').empty();
 
-
     const tableOfTasks = tasks;
 
-
-    for(let task of tasks) {
-        if(task.complete == 'yes') {
-        $('.js-task-list').append(`
+    for (let task of tasks) {
+        if (task.complete == 'yes') {
+            $('.js-task-list').append(`
 
         <tr>
             <td align="center"><h3>${task.task}</h3></td>
@@ -115,9 +113,9 @@ function render(tasks) {
         </tr>
             
         `)
-    }
+        }
         else {
-        $('.js-task-list').append(`
+            $('.js-task-list').append(`
 
         <tr>
         <span>

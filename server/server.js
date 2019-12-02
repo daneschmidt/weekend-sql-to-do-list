@@ -6,7 +6,7 @@ const taskRouter = require('./routes/task.router')
 
 app.use(express.static('server/public'));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended:true}));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/api/tasks', taskRouter);
 
 app.listen(PORT, () => {

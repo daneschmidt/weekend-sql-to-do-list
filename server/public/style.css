@@ -1,8 +1,7 @@
 
 body {
 	background-color: lightgrey;
-	background-image: url("background.png");
-	
+	background-image: url("background.png");	
 }
 
 
@@ -27,15 +26,15 @@ h3 {
 	padding-right: 30px;
 	padding-bottom: 50px;
 	padding-left: 80px;
-
 }
-
 
 table {
 text-align:center;
 width:auto;
 table-layout:fixed;
 border-collapse: collapse;
+margin-left:auto; 
+margin-right:auto;
 }
 
 th{
@@ -43,15 +42,12 @@ th{
 	padding-right: 20px;
 	padding-bottom: 10px;
 	padding-left: 20px;
-
 }
 
 td {
 word-wrap:break-word;
 border-collapse: collapse;
-/* border: 2px solid black; */
 }
-
 
 form {
 	text-align:center;
